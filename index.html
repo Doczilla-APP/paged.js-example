@@ -3,7 +3,7 @@
 	<title>Beautiful PDFs from HTML</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="toc.js"></script>
-	<script src="paged.polyfill.js"></script>
+    <script src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
 	<script>
 		class handlers extends Paged.Handler {
 		    constructor(chunker, polisher, caller) {
@@ -19,6 +19,7 @@
 		  }
 		  Paged.registerHandlers(handlers);
 	</script>
+
 </head>
 
 <body>
@@ -351,33 +352,5 @@ Paged.registerHandlers(handlers);
 </figure>
 
 </div>
-
-<!-- 4.0 MathJax Add-on
-<script>
-window.MathJax = {
-	loader: { load: ['[tex]/ams'] },
-	tex: { packages: {'[+]': ['ams']} },
-	"fast-preview": { disabled: true },
-	extensions: ["tex2jax.js", "asciimath2jax.js", "TeX/AMSmath.js", "TeX/AMSsymbols.js", "TeX/noErrors.js"],
-	jax: ["input/TeX", "input/AsciiMath", "output/HTML-CSS"],
-	displayAlign: "left",
-	tex2jax: {
-  		inlineMath: [ ["\\(","\\)"] ],
-  		displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-  		processEscapes: true
-	}, 
-	asciimath2jax: { delimiters: [['`','`']], preview: [""]},
-	"HTML-CSS": { fonts: ["STIX"] }
-}
-</script>
-<script type="text/javascript" sync src="MathJax-2.7.7/MathJax.js"></script>
--->
-
-<!-- Additional MathJax Code (if you want to re-render math)
-<script>
-	const math = document.getElementsByClassName("math");
- 	MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);  
-</script>
--->
 </body>
 </html>
